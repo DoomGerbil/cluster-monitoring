@@ -12,7 +12,7 @@
     },
     {
       name: 'armExporter',
-      enabled: false,
+      enabled: true,
       file: import 'modules/arm_exporter.jsonnet',
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       name: 'metallbExporter',
-      enabled: false,
+      enabled: true,
       file: import 'modules/metallb.jsonnet',
     },
     {
@@ -43,7 +43,7 @@
   },
 
   // Domain suffix for the ingresses
-  suffixDomain: '192.168.1.15.nip.io',
+  suffixDomain: 'cluster.wirecube.net',
   // If TLSingress is true, a self-signed HTTPS ingress with redirect will be created
   TLSingress: true,
   // If UseProvidedCerts is true, provided files will be used on created HTTPS ingresses.
@@ -75,7 +75,7 @@
   },
   grafana: {
     // Grafana "from" email
-    from_address: 'myemail@gmail.com',
+    from_address: 'grafana@wirecube.net',
     // Plugins to be installed at runtime.
     //Ex. plugins: ['grafana-piechart-panel', 'grafana-clock-panel'],
     plugins: [],
