@@ -27,12 +27,12 @@
     },
     {
       name: 'nginxExporter',
-      enabled: false,
+      enabled: true,
       file: import 'modules/nginx.jsonnet',
     },
     {
       name: 'traefikExporter',
-      enabled: false,
+      enabled: true,
       file: import 'modules/traefik.jsonnet',
     },
     {
@@ -44,7 +44,7 @@
 
   k3s: {
     enabled: false,
-    master_ip: ['192.168.1.15'],
+    master_ip: ['192.168.0.202'],
   },
 
   // Domain suffix for the ingresses
@@ -60,21 +60,21 @@
   // Persistent volume configuration
   enablePersistence: {
     // Setting these to false, defaults to emptyDirs.
-    prometheus: false,
-    grafana: false,
+    prometheus: true,
+    grafana: true,
     // If using a pre-created PV, fill in the names below. If blank, they will use the default StorageClass
     prometheusPV: '',
     grafanaPV: '',
     // If required to use a specific storageClass, keep the PV names above blank and fill the storageClass name below.
-    storageClass: '',
+    storageClass: 'nfs-storage',
     // Define the PV sizes below
-    prometheusSizePV: '2Gi',
+    prometheusSizePV: '10Gi',
     grafanaSizePV: '20Gi',
   },
 
   // Configuration for Prometheus deployment
   prometheus: {
-    retention: '15d',
+    retention: '90d',
     scrapeInterval: '30s',
     scrapeTimeout: '30s',
   },
