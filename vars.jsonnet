@@ -32,7 +32,7 @@
     },
     {
       name: 'traefikExporter',
-      enabled: true,
+      enabled: false,
       file: import 'modules/traefik.jsonnet',
     },
     {
@@ -66,9 +66,9 @@
     prometheusPV: '',
     grafanaPV: '',
     // If required to use a specific storageClass, keep the PV names above blank and fill the storageClass name below.
-    storageClass: 'nfs-storage',
+    storageClass: 'managed-nfs',
     // Define the PV sizes below
-    prometheusSizePV: '10Gi',
+    prometheusSizePV: '20Gi',
     grafanaSizePV: '20Gi',
   },
 

@@ -58,7 +58,7 @@ spec:
         - ReadWriteOnce
         resources:
           requests:
-            storage: 10Gi
-        storageClassName: nfs-storage
+            storage: 20Gi
+        storageClassName: managed-nfs
         volumeName: ""
   version: v2.19.1
